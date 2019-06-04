@@ -1,7 +1,7 @@
 
 
 
-def binary_search(a,num):
+def binary_iterative(a,num):
 
     l = 0
     ar = a
@@ -22,4 +22,23 @@ def binary_search(a,num):
      if ar[mid] < num:
         l = mid + 1
 
-      
+
+
+def binary_recursive(a,l,r,num):
+
+    mid = l + (r-l)/2
+
+    if r < l :
+        return -1
+
+    if a[mid] == num :
+        return mid
+
+    if a[mid] > num:
+        binary_recursive(a,l,mid-1,num)
+
+
+    if a[mid] < num:
+       binary_recursive(a,mid+1,r,num)
+
+
