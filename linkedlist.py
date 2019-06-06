@@ -7,7 +7,6 @@ class Node():
         self.data = data
         self.next_node = next_node
 
-
     
     def get_data(self):
         return self.data
@@ -16,7 +15,6 @@ class Node():
 
     def get_next(self):
         return self.next_node
-
 
 
     def set_next(self,new_next):
@@ -30,10 +28,20 @@ class LinkedList():
         self.head = head
 
 
-    def insert(self,data):
+    def insert_beginning(self,data):
         new_node = Node(data)
-        new_node.set_next
+        new_node.set_next(self.head)
         self.head = new_node
+
+    def insert_end(self,data):
+        current = self.head
+        while current.next_node != None:
+            current = current.next_node
+
+        new_node = Node(data)
+        current.next_node = new_node
+
+
 
 
         
