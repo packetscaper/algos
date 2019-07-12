@@ -63,5 +63,24 @@ class LinkedList():
        self.head = new_head
 
            
+    def get_count(self):
+        current = self.head
+        count = 0
+        while (current != None):
+          count = count + 1
+          current = current.get_next()
+        return count 
 
+
+
+    def get_nth_from_last(self,n):
+        slow = self.head
+        fast = self.head
+        for i in range(1,n):
+            fast = fast.get_next()
+        while (fast.get_next()!=None):
+            fast = fast.get_next()
+            slow = slow.get_next()
+
+        return slow.get_data()
         
