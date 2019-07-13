@@ -7,6 +7,19 @@
 #         self.val = x
 #         self.next = None
 
+'''
+use cases
+
+ count = 0
+ count = 1
+ k = 0
+ k % c = 0
+ k > c
+ k < c
+
+
+'''
+
 class Solution(object):
     def rotateRight(self, head, k):
         """
