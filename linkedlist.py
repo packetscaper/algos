@@ -24,8 +24,11 @@ class Node():
 
 class LinkedList():
     
-    def __init__(self,head=None):
+    def __init__(self,array=None,head=None):
         self.head = head
+        if array != None:
+            for i in array:
+                self.insert_end(i)
 
 
     def insert_beginning(self,data):
@@ -34,20 +37,24 @@ class LinkedList():
         self.head = new_node
 
     def insert_end(self,data):
+        new_node = Node(data) 
         current = self.head
-        while current.next_node != None:
-            current = current.next_node
-
-        new_node = Node(data)
-        current.next_node = new_node
-
+        if self.head == None :
+          self.head = new_node
+        
+        else :
+         while (current.get_next() != None ):
+            current = current.get_next()
+         current.set_next(new_node)
 
     def print_list(self):
        current = self.head
+       list = 'head--->' 
        while (current != None):
-           print current.get_data()
+           list = list+ str(current.get_data()) + '--->'
            current = current.get_next()
-
+      
+       print list + 'null'
    
     def reverse_list(self):
        new_head = self.head
